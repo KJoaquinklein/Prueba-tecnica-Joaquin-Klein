@@ -35,8 +35,8 @@ const Personalnterests: React.FC = () => {
                 Intereses Personales:
             </h2>
             <div className={styles.containerInterest} data-aos="fade-left">
-                {arrayIntrests.map((int) => (
-                    <div className={styles.cardInterest}>
+                {arrayIntrests.map((int, index) => (
+                    <div key={index++} className={styles.cardInterest}>
                         <img className={styles.img} src={int.img} alt="" />
                         <p className={styles.interestTitle}>{int.interestName}</p>
                     </div>

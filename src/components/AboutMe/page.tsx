@@ -27,12 +27,10 @@ const AboutMe: React.FC = () => {
                     Trabaja en: <strong>Barcelona Publicidad</strong>
                 </p>
                 <p className={styles.data}>
-                    <strong>"</strong>
                     Soy una diseñadora gráfica apasionada por los viajes y la fotografía. Resido en la vibrante ciudad
                     de Barcelona, España, y tengo la suerte de trabajar en una reconocida empresa de publicidad, donde
                     puedo expresar mi creatividad y habilidades cada día. Me considero una persona extrovertida y
                     amigable, siempre dispuesta a echar una mano a mis compañeros de trabajo y a mis amigos.
-                    <strong>"</strong>
                 </p>
             </div>
         </div>

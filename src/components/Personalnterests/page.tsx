@@ -3,16 +3,11 @@ import { useEffect } from "react";
 import styles from "./page.module.css";
 import "aos/dist/aos.css";
 import Aos from "aos";
+import { IObjInterests } from "@/hooks/types";
 
-//!aislar en un archivo types
-interface objInterests {
-    interestName: string;
-    img: string;
-}
-
-const arrayIntrests: objInterests[] = [
+const arrayIntrests: IObjInterests[] = [
     {
-        interestName: "Bateria",
+        interestName: "Batería",
         img: "https://schoolofrock.imgix.net/img/news-article-hero@2x/beginning-drums2-1645469645.jpg",
     },
     {

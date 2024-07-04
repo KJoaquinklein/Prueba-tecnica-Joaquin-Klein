@@ -1,3 +1,5 @@
+import { IForm } from "@/hooks/types";
+
 export const validations = (errorForm, setErrorForm, property, value) => {
     if (property === "user_name") {
         if (!value.length) {

@@ -1,83 +1,16 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./page.module.css";
-import emailjs from "@emailjs/browser";
-import { validations } from "./validations";
-import Swal from "sweetalert2";
 import "aos/dist/aos.css";
 import Aos from "aos";
+import useForm from "@/hooks/useForm";
 
 const ContactForm: React.FC = () => {
     useEffect(() => {
         Aos.init();
     }, []);
 
-    const form = useRef<HTMLFormElement>(null);
-    const [errorForm, setErrorForm] = useState({ user_name: "", user_email: "", message: "" });
-    const [formData, setFormData] = useState({ user_name: "", user_email: "", message: "" });
-
-    const handleChangeData = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
-        const property = event.target.name;
-        const value = event.target.value;
-
-        validations(errorForm, setErrorForm, property, value);
-
-        setFormData({ ...formData, [property]: value });
-    };
-
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-
-        if (form.current === null) {
-            console.log("El formulario no está disponible.");
-            return;
-        }
-
-        if (!formData.message || !formData.user_email || !formData.user_name) {
-            return Swal.fire({
-                title: "Faltan datos",
-                text: "Completa los datos de contacto para enviar el mensaje",
-                icon: "warning",
-                confirmButtonColor: "#bc4749",
-                confirmButtonText: "Ok",
-            });
-        }
-
-        if (errorForm.message || errorForm.user_email || errorForm.user_name) {
-            return Swal.fire({
-                title: "Datos erroneos",
-                text: "Revisa los datos para enviar el mensaje",
-                icon: "error",
-                confirmButtonColor: "#bc4749",
-                confirmButtonText: "Ok",
-            });
-        }
-
-        emailjs
-            .sendForm("service_zuhflsq", "template_40wvcgf", form.current, {
-                publicKey: "eNVTHcPvs2RM7p2JZ",
-            })
-            .then(() => {
-                Swal.fire({
-                    title: "¡Mensaje enviado correctamente!",
-                    text: "",
-                    icon: "success",
-                    confirmButtonColor: "#6a994e",
-                    confirmButtonText: "Ok",
-                });
-                setFormData({ user_name: "", user_email: "", message: "" });
-            })
-            .catch(() => {
-                Swal.fire({
-                    title: "Algo salio mal :(",
-                    text: "Intentelo nuevamente más tarde",
-                    icon: "error",
-                    confirmButtonColor: "#bc4749",
-                    confirmButtonText: "Ok",
-                });
-                setFormData({ user_name: "", user_email: "", message: "" });
-            });
-    };
+    const { form, errorForm, formData, handleChangeData, handleSubmit } = useForm();
 
     return (
         <div id="contact" className={styles.containerContact}>

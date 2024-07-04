@@ -24,7 +24,7 @@ const AboutMe: React.FC = () => {
                     Ubicación: <strong>Barcelona | España</strong>
                 </p>
                 <p className={styles.data}>
-                    Trabaja en: <strong>Barcelona Pubicidad</strong>
+                    Trabaja en: <strong>Barcelona Publicidad</strong>
                 </p>
                 <p className={styles.data}>
                     <strong>"</strong>

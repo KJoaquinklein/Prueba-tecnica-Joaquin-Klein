@@ -1,0 +1,140 @@
+.containerContact {
+    width: 85%;
+}
+
+.title {
+    font-size: 30px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #bc4749;
+}
+
+.containerForm {
+    width: 600px;
+    margin: auto;
+}
+
+.containerInput {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.titleLabel {
+    margin-right: 15px;
+    font-size: 20px;
+    display: flex;
+}
+
+.input {
+    font-size: 20px;
+    border: 2px solid #202627;
+    border-radius: 15px;
+    background-color: white;
+    color: #202627;
+    padding: 0 5px;
+}
+
+.containerTextarea {
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea {
+    font-size: 20px;
+    border: 2px solid #202627;
+    border-radius: 15px;
+    background-color: white;
+    color: #202627;
+    padding: 0 5px;
+    max-width: 600px;
+    min-width: auto;
+    max-height: 200px;
+    min-height: 200px;
+    margin-top: 5px;
+}
+
+.button {
+    margin-bottom: 50px;
+    margin-top: 10px;
+    color: #6a994e;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 15px 5px 15px;
+    border: 3px solid #6a994e;
+    border-radius: 15px;
+    transition: all 0.2s;
+    background-color: white;
+    cursor: pointer;
+}
+.button:hover {
+    scale: 1.03;
+}
+
+.buttonblock {
+    margin-bottom: 50px;
+    margin-top: 10px;
+    color: #5b6163;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 15px 5px 15px;
+    border: 3px solid;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.containerInputError {
+    display: flex;
+}
+
+/* !errores */
+
+.error {
+    color: #bc4749;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.inputError {
+    font-size: 20px;
+    border: 2px solid #bc4749;
+    border-radius: 15px;
+    background-color: white;
+    color: #bc4749;
+    padding: 0 5px;
+}
+
+.textareaError {
+    font-size: 20px;
+    border: 2px solid #bc4749;
+    border-radius: 15px;
+    background-color: white;
+    color: #bc4749;
+    padding: 0 5px;
+    max-width: 600px;
+    min-width: auto;
+    max-height: 200px;
+    min-height: 200px;
+    margin-top: 5px;
+}
+
+@media (max-width: 820px) {
+    .titleLabel {
+        font-weight: bold;
+    }
+
+    .containerForm {
+        max-width: 100%;
+    }
+
+    .input {
+    }
+
+    .containerInputError {
+        flex-direction: column;
+    }
+}
